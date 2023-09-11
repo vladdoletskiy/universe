@@ -4,7 +4,8 @@
   "info": {
     "singularName": "film-id",
     "pluralName": "films",
-    "displayName": "Films"
+    "displayName": "Films",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -18,16 +19,20 @@
       "type": "text"
     },
     "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "link": {
+      "type": "string"
+    },
+    "poster": {
       "type": "string"
     }
   }

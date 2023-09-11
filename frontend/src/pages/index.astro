@@ -1,6 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import { MovieCard } from "../components/MovieCard.tsx";
+import { Header } from "../components/Header.tsx";
+import { MovieSelection } from "../components/MovieSelection.tsx";
 ---
 
-<Layout />
+<Layout>
+    <Header />
+    <MovieSelection/> 
+</Layout>
