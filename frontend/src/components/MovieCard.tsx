@@ -6,7 +6,7 @@ export const MovieCard: React.FC<{
     movie: Movie;
     onClick?: () => void;
     children?: React.ReactElement;
-}> = ({ movie: { name, description, picture, id }, onClick, children }) => {
+}> = ({ movie: { name, description, picture }, onClick, children }) => {
     return (
         <motion.div
             onClick={onClick}

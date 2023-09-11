@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import type { Movie } from "../types/Movie.ts";
-import type {
-    MovieListResponse,
-    MovieResponse,
-} from "../types/MovieListResponse.ts";
+import type { MovieResponse } from "../types/MovieListResponse.ts";
 import { MovieCard } from "./MovieCard.tsx";
 import axios from "axios";
 import { config } from "../shared/api/axios-config.ts";

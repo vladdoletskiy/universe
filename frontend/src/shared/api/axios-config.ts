@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export const config = {
     maxBodyLength: Infinity,
     baseURL: "http://localhost:1337/api/",
