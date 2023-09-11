@@ -7,6 +7,7 @@ import type {
 import { MovieCard } from "./MovieCard.tsx";
 import axios from "axios";
 import { config } from "../shared/api/axios-config.ts";
+import { motion } from "framer-motion";
 
 export const MovieSelection: React.FC = () => {
     const [movies, setMovies] = useState<Movie[]>([]);
@@ -60,30 +61,46 @@ export const MovieSelection: React.FC = () => {
         }
     }, [remainingMovies, selectedMovies]);
 
-    console.log("selectedMovies", selectedMovies);
-    console.log("remainingMovies", remainingMovies);
-
     return (
         <div className="flex flex-col items-center bg-neutral-700 pb-5">
-            <p className="m-3 text-white text-23">Choose one movie</p>
+            <p className="mt-4 text-white text-3xl">
+                {selectedMovie ? "Good choice! Enjoy!" : "Choose one movie"}
+            </p>
             <div className="flex items-center bg-neutral-700 mt-6">
                 {!selectedMovie &&
-                    remainingMovies.slice(0, 2).map((movie) => (
-                        <div key={movie.id}>
+                    remainingMovies.slice(0, 2).map((movie, index) => (
+                        <motion.div
+                            key={movie.id}
+                            initial={{ x: index === 0 ? -100 : 100 }}
+                            animate={{ x: index === 0 ? 0 : 0 }}
+                        >
                             <MovieCard
                                 movie={movie}
                                 onClick={() => handleMovieClick(movie)}
                             />
-                        </div>
+                        </motion.div>
                     ))}
-                {selectedMovie ? (
-                    <div>
+                {selectedMovie && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                            duration: 0.8,
+                            delay: 0.5,
+                            ease: [0, 0.71, 0.2, 1.01],
+                        }}
+                    >
                         <MovieCard movie={remainingMovies[0]}>
-                            <a href={selectedMovie.link}>Тицяй сюди</a>
+                            <button className="bg-gradient-to-r from-gray-400 via-gray-600 to-gray-400 text-white font-bold py-2 px-4 rounded-full border border-gray-600 hover:opacity-80 hover:shadow-md transition duration-300 ease-in-out">
+                                <a
+                                    href={selectedMovie.link}
+                                    className="hover:text-white"
+                                >
+                                    Poke here
+                                </a>
+                            </button>
                         </MovieCard>
-                    </div>
-                ) : (
-                    <div></div>
+                    </motion.div>
                 )}
             </div>
         </div>
