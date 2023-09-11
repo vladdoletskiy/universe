@@ -18,7 +18,7 @@ export const MovieCard: React.FC<{
                 className="h-[335px] sm:h-[235px] w-[230px] sm:w-[160px] mt-5 rounded-lg hover:drop-shadow-xl transition "
             />
             <h2 className="text-[18px] font-bold mt-7  ">{name}</h2>
-            <p className="text-base mt-3 mb-2">{description}</p>
+            <p className="text-base mt-3 mb-4">{description}</p>
             {children}
         </motion.div>
     );
