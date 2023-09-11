@@ -14,7 +14,7 @@ export const MovieCard: React.FC<{
         >
             <motion.img
                 src={picture}
-                alt="img"
+                alt={name}
                 className="h-[335px] sm:h-[235px] w-[230px] sm:w-[160px] mt-5 rounded-lg hover:drop-shadow-xl transition "
             />
             <h2 className="text-[18px] font-bold mt-7  ">{name}</h2>
