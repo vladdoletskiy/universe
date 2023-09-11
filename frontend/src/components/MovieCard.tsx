@@ -10,12 +10,12 @@ export const MovieCard: React.FC<{
     return (
         <motion.div
             onClick={onClick}
-            className="flex flex-col items-center bg-neutral-300 h-[600px] w-[400px] p-3 m-3 rounded-lg"
+            className="flex flex-col items-center bg-neutral-300 h-[650px] max-w-[400px] p-3 m-3 rounded-lg"
         >
             <motion.img
                 src={picture}
                 alt="img"
-                className="h-[335px] w-[230px] mt-5 rounded-lg hover:drop-shadow-xl transition "
+                className="h-[335px] sm:h-[235px] w-[230px] sm:w-[160px] mt-5 rounded-lg hover:drop-shadow-xl transition "
             />
             <h2 className="text-[18px] font-bold mt-7  ">{name}</h2>
             <p className="text-base mt-3 mb-2">{description}</p>

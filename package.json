@@ -1,0 +1,14 @@
+{
+    "name": "universe-app",
+    "version": "1.0.0",
+    "description": "Universe app",
+    "scripts": {
+        "start:frontend": "cd frontend && npm start",
+        "start:backend": "cd backend/universe-backend && npm run develop",
+        "start:both": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+        "start": "npm run start:both"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.1"
+    }
+}
