@@ -6,6 +6,12 @@ Test Task Frontend Developer
 
 npm start
 
+# strapi
+
+for enter to strapi just use:
+login: vladdoletskiy@gmail.com
+password: Password11
+
 # Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
